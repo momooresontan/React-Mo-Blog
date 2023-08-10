@@ -5,12 +5,12 @@ export default function RegisterPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function register(ev) {
+  async function register(ev) {
     ev.preventDefault();
-    fetch("http://localhost:4000", {
+    await fetch("http://localhost:4000/register", {
       method: "POST",
       body: JSON.stringify({ username, email, password }),
-      headers: { "Content-Type": "Application" },
+      headers: { "Content-Type": "application/json" },
     });
   }
   return (

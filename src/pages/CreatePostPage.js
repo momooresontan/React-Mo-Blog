@@ -34,9 +34,24 @@ export default function CreatePostPage() {
   const [title, setTitle] = useState("");
   const [summary, setSummary] = useState("");
   const [content, setContent] = useState("");
+  const [file, setFile] = useState("");
+
+  function createNewPost(e) {
+    const data = new FormData();
+    data.set('title', title)
+    data.set('summary', summary)
+    data.set('content', content)
+    data.set('file', )
+
+    e.preventDefault();
+    fetch("http://localhost:4000/post", {
+        method: "POST",
+        body: 
+    });
+  }
 
   return (
-    <form>
+    <form onSubmit={createNewPost}>
       <input
         type="title"
         placeholder={"Title"}

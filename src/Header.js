@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "./UserContext";
 
@@ -8,6 +8,7 @@ export default function Header() {
   useEffect(() => {
     fetch("http://localhost:4000/getMe", {
       credentials: "include",
+      method: "GET",
     }).then((response) => {
       response.json().then((userInfo) => {
         setUserInfo(userInfo);

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { Navigate } from "react-router-dom";
 
 const modules = {
   toolbar: [
@@ -55,6 +56,9 @@ export default function CreatePostPage() {
     }
   }
 
+  if (redirect) {
+    return <Navigate to={"/"} />;
+  }
   return (
     <form onSubmit={createNewPost}>
       <input

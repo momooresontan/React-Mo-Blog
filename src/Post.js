@@ -1,4 +1,10 @@
-export default function Post() {
+export default function Post({
+  title,
+  summary,
+  content,
+  imageCover,
+  createdAt,
+}) {
   return (
     <div className="post">
       <div className="image">
@@ -8,16 +14,12 @@ export default function Post() {
         />
       </div>
       <div className="text">
-        <h2>Nvidia CEO: We bet the farm on AI and no one knew it</h2>
+        <h2>{title}</h2>
         <p className="info">
           <a className="author">Momooreoluwa Sontan</a>
-          <time>2023-08-09 14:38</time>
+          <time>{createdAt}</time>
         </p>
-        <p className="summary">
-          Nvidia founder and CEO Jensen Huang said today that the company made
-          an existential business decision in 2018 that few realized would
-          redefine its future and help redefine an evolving industry.
-        </p>
+        <p className="summary">{summary}</p>
       </div>
     </div>
   );

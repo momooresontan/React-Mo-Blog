@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+
 export default function Post({
   title,
   summary,
@@ -17,7 +19,7 @@ export default function Post({
         <h2>{title}</h2>
         <p className="info">
           <a className="author">Momooreoluwa Sontan</a>
-          <time>{createdAt}</time>
+          <time>{format(new Date(createdAt), "d MMM, yyyy HH:mm")}</time>
         </p>
         <p className="summary">{summary}</p>
       </div>

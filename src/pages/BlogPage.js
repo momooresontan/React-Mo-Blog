@@ -23,9 +23,9 @@ export default function BlogPage() {
       <time>{formatISO9075(new Date(postInfo.createdAt))}</time>
       <div className="author">by @{postInfo.author.username}</div>
       {userInfo.user.id === postInfo.author._id && (
-        <div>
-          <a className="edit" href="">
-            Edit this post{" "}
+        <div className="edit-row">
+          <a className="edit-btn" href="">
+            Edit this post
           </a>
         </div>
       )}

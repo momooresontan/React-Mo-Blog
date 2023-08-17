@@ -1,4 +1,4 @@
-import { format } from "date-fns";
+import { formatISO9075 } from "date-fns";
 
 export default function Post({
   title,
@@ -19,7 +19,7 @@ export default function Post({
         <h2>{title}</h2>
         <p className="info">
           <a className="author">Momooreoluwa Sontan</a>
-          <time>{format(new Date(createdAt), "d MMM, yyyy HH:mm")}</time>
+          <time>{formatISO9075(new Date(createdAt))}</time>
         </p>
         <p className="summary">{summary}</p>
       </div>

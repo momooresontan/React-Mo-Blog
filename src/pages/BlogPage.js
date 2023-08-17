@@ -19,6 +19,7 @@ export default function BlogPage() {
         <img src={`http://localhost:4000/${postInfo.imageCover}`} alt="" />
       </div>
       <h1>{postInfo.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: postInfo.content }} />
     </div>
   );
 }

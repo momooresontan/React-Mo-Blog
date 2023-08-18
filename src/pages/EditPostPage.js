@@ -39,7 +39,9 @@ export default function EditPostPage() {
   const [files, setFiles] = useState("");
   const [redirect, setRedirect] = useState(false);
 
-  async function updatePost(e) {}
+  async function updatePost(e) {
+    e.preventDefault();
+  }
 
   if (redirect) {
     return <Navigate to={"/"} />;

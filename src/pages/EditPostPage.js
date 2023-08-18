@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import Editor from "../Editor";
 
@@ -9,6 +9,16 @@ export default function EditPostPage() {
   const [content, setContent] = useState("");
   const [files, setFiles] = useState("");
   const [redirect, setRedirect] = useState(false);
+
+  useEffect(() => {
+    fetch(`http://localhost:4000/post/${id}`).then((response) => {
+      response.json().then((postInfo) => {
+        setTitle(postInfo.title);
+        setSummary(postInfo.summary);
+        setContent(postInfo.content);
+      });
+    });
+  }, []);
 
   async function updatePost(e) {
     e.preventDefault();

@@ -1,6 +1,7 @@
 import { formatISO } from "date-fns";
 import { useState } from "react";
 import ReactQuill from "react-quill";
+import { Navigate } from "react-router-dom";
 
 const modules = {
   toolbar: [
@@ -38,10 +39,14 @@ export default function EditPostPage() {
   const [files, setFiles] = useState("");
   const [redirect, setRedirect] = useState(false);
 
-  async function editPost(e) {}
+  async function updatePost(e) {}
+
+  if (redirect) {
+    return <Navigate to={"/"} />;
+  }
 
   return (
-    <form onSubmit={editPost}>
+    <form onSubmit={updatePost}>
       <input
         type="title"
         placeholder={"Title"}
